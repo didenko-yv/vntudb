@@ -30,7 +30,7 @@ class Program(db.Model):
     @staticmethod
     def get_by_id(_id):
         obj = Program.query.filter_by(id=_id).first()
-        return obj if obj is not None else False
+        return obj if obj is not None else []
 
     @staticmethod
     def update_by_id(raw):
@@ -64,7 +64,7 @@ class Program(db.Model):
     @staticmethod
     def get_all():
         objs = Program.query.all()
-        return [o.to_dict() for o in objs] if objs else False
+        return [o.to_dict() for o in objs] if objs else []
 
     @staticmethod
     def add_to_db(raw):
@@ -91,7 +91,7 @@ class Program(db.Model):
             obj = Program.query.filter_by(schedule=schedule).all()
         elif tax:
             obj = Program.query.filter_by(tax=tax).all()
-        return obj if obj is not None else False
+        return obj if obj is not None else []
 
 
 if __name__ == '__main__':

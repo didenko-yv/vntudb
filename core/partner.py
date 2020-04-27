@@ -62,7 +62,7 @@ class Partner(db.Model):
     @staticmethod
     def get_all():
         objs = Partner.query.all()
-        return [o.to_dict() for o in objs] if objs else False
+        return [o.to_dict() for o in objs] if objs else []
 
     @staticmethod
     def add_to_db(raw):
@@ -87,7 +87,7 @@ class Partner(db.Model):
             obj = Partner.query.filter_by(schedule=schedule).all()
         elif tax:
             obj = Partner.query.filter_by(tax=tax).all()
-        return obj if obj is not None else False
+        return obj if obj is not None else []
 
 
 if __name__ == '__main__':
