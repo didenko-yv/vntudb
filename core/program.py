@@ -19,7 +19,7 @@ class Program(db.Model):
     college = db.Column(db.Unicode(100), nullable=False, default=0)
     sponsor = db.Column(db.Unicode(100), nullable=False)
     chief = db.Column(db.Unicode(100), nullable=False)
-    filed = db.Column(db.Unicode(100), nullable=False)
+    field = db.Column(db.Unicode(100), nullable=False)
 
     def get_data(self):
         row = {}
@@ -75,7 +75,7 @@ class Program(db.Model):
         obj.college = raw['college']
         obj.sponsor = raw['sponsor']
         obj.chief = raw['chief']
-        obj.filed = raw['filed']
+        obj.field = raw['field']
 
         db.session.add(obj)
         db.session.commit()

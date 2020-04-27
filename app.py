@@ -137,8 +137,8 @@ def student():
     return wrap_response({"data": result}, False, 200)
 
 
-@app.route('/program', methods=['POST', 'GET', 'PUT', 'DELETE'])
-def programs():
+@app.route('/programs', methods=['POST', 'GET', 'PUT', 'DELETE'])
+def program():
     result = []
     data = request.json
     args = request.args

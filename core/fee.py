@@ -14,7 +14,6 @@ class Fee(db.Model):
 
     id = db.Column(db.Integer(), primary_key=True)
     program = db.Column(db.Unicode(100), nullable=False)
-    sponsor = db.Column(db.Unicode(100), nullable=True)
     course_price = db.Column(db.Integer(), nullable=False)
     grant = db.Column(db.Integer(), nullable=False, default=0)
     living_cost = db.Column(db.Integer(), nullable=False, default=0)
@@ -69,7 +68,6 @@ class Fee(db.Model):
     def add_to_db(raw):
         obj = Fee()
         obj.program = raw['program']
-        obj.sponsor = raw['sponsor']
         obj.course_price = raw['course_price']
         obj.grant = raw['grant']
         obj.living_cost = raw['living_cost']

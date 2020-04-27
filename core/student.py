@@ -16,7 +16,7 @@ class Student(db.Model):
     full_name = db.Column(db.Unicode(100), nullable=False)
     phone_number = db.Column(db.Unicode(100), nullable=True)
     program = db.Column(db.Unicode(100), nullable=False)
-    university = db.Column(db.Unicode(100), nullable=False, default=0)
+    college = db.Column(db.Unicode(100), nullable=False, default=0)
     specialization = db.Column(db.Unicode(100),nullable=False)
     year_study = db.Column(db.Integer(), nullable=False)
     foreign_language = db.Column(db.Unicode(100), nullable=False)
@@ -74,7 +74,7 @@ class Student(db.Model):
         obj.phone_number = raw['phone_number']
         obj.program = raw['program']
         obj.specialization = raw['specialization']
-        obj.university = raw['university']
+        obj.college = raw['college']
         obj.year_study = raw['year_study']
         obj.foreign_language = raw['foreign_language']
         obj.progress = raw['progress']
